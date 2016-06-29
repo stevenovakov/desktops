@@ -189,3 +189,6 @@ bindsym Print exec scrot ~/screenshots/screenshot$(date +'%Y-%m-%dT%H:%M:%S').pn
 bindsym Shift+Print exec sleep 0.2 && scrot -s screenshot$(date +'%Y-%m-%dT%H:%M:%S').png -e 'mv $f ~/screenshots/'
 bindsym Control+Print exec scrot -u screenshot$(date +'%Y-%m-%dT%H:%M:%S').png -e 'mv $f ~/screenshots/'
 bindsym Control+Shift+Print exec scrot -d 5 ~/screenshots/screenshot$(date +'%Y-%m-%dT%H:%M:S').png
+
+# Redshift
+exec --no-startup-id redshift-gtk

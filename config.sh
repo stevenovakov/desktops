@@ -19,6 +19,7 @@ DOTFILES="
   .vimrc
   .xinitrc
   .Xresources
+  .config/redshift.conf
 "
 
 DIRECTORIES="
