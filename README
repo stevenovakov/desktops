@@ -1,0 +1,10 @@
+Use the configuration script config.sh to deploy the configuration files.
+
+$ ./config.sh deploy
+
+after making ANY changes, run, from the git root directory
+
+$ ./config.sh copy
+$ ./config.sh gitadd
+
+then commit and push, etc
