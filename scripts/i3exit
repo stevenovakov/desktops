@@ -1,0 +1,28 @@
+#!/bin/bash
+
+lock() {
+  i3lock -i ~/.config/i3/wallpapers/beeple_cortxxnine.png -d -I 60
+}
+
+case "$1" in
+  lock)
+    lock
+    ;;
+  suspend)
+    lock && systemctl suspend
+    ;;
+  logout)
+    i3-msg exit
+    ;;
+  reboot)
+    systemctl reboot
+    ;;
+  shutdown)
+    systemctl poweroff
+    ;;
+  *)
+    echo "Usage: $0 {lock|suspend}"
+    exit 2
+esac
+
+exit 0
