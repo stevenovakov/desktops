@@ -19,6 +19,7 @@ DOTFILES="
   .vimrc
   .xinitrc
   .Xresources
+  .config/redshift.conf
 "
 
 DIRECTORIES="
@@ -30,6 +31,7 @@ DIRECTORIES="
 
 if [ "$1"  = "copy" ];then
   echo "Copying configuration files..."
+
   for f in $DOTFILES
   do
     cp ~/$f $DIR/$f
@@ -47,19 +49,30 @@ if [ "$1"  = "copy" ];then
     done
     cd $DIR
   done
+
 elif [ "$1" = "deploy" ]; then
   echo "Deploying configuration files..."
+
   for f in $DOTFILES
   do
-    cp $f ~/$f
+    ln -s $DIR/$f ~/$f
   done
+
   for d in $DIRECTORIES
   do
     sub_files=$(find $d)
+
+    for f in $sub_files
+    do
+      if [[ -d $f ]]; then
+        mkdir -p ~/$f
+      fi
+    done
+
     for f in $sub_files
     do
       if [[ -f $f ]]; then
-        cp --parents $f ~/
+        ln -s $DIR/$f ~/$f
       fi
     done
   done
