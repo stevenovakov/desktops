@@ -174,7 +174,7 @@ mode "$mode_system" {
   bindsym s exec --no-startup-id i3exit suspend, mode "default"
   bindsym e exec --no-startup-id i3exit logout, mode "default"
   bindsym r exec --no-startup-id i3exit reboot, mode "default"
-  bindsym Shift+s --no-startup-id i3exit shutdown, mode "default"
+  bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
   bindsym Return mode "default"
   bindsym Escape mode "default"
@@ -192,3 +192,6 @@ bindsym Control+Shift+Print exec scrot -d 5 ~/screenshots/screenshot$(date +'%Y-
 
 # Redshift
 exec --no-startup-id redshift-gtk
+
+# Dropbox
+exec --no-startup-id ~/.dropbox-dist/dropboxd

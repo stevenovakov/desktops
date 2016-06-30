@@ -1,10 +1,11 @@
-Use the configuration script config.sh to deploy the configuration files.
+Use the configuration script config.sh to deploy the symlinks to the configuration files.
 
 $ ./config.sh deploy
 
-after making ANY changes, run, from the git root directory
+Please backup and remove existing files or the symlinks will not be created. Do all editing of configuration files inside the git directory.
 
-$ ./config.sh copy
+To stage changes for commit use:
+
 $ ./config.sh gitadd
 
-then commit and push, etc
+then commit and push.
