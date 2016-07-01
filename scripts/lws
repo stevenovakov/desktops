@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# lws
+#
+# LaTeX Workspace
+#
+# author: Steve Novakov 2016-06-30
+#
+
+DIR=$(pwd)
+TEXFILE=$1
+PDFFILE=${TEXFILE//.tex}.pdf
+
+echo $TEXFILE
+echo $PDFFILE
+#pdflatex $TEXFILE
+
+i3-msg "workspace 4; append_layout ~/scripts/latex_edit.json; exec urxvt -cd $DIR; exec urxvt -cd $DIR; exec mupdf $DIR/$PDFFILE"
