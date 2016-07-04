@@ -17,6 +17,7 @@ DOTFILES="
   .bashrc
   .i3blocks.conf
   .vimrc
+  .vimrc.local
   .xinitrc
   .Xresources
   .config/redshift.conf
@@ -86,4 +87,8 @@ elif [ "$1" = "gitadd" ]; then
   do
     git add $d/*
   done
+elif [ "$1" = "regpkg" ]; then
+  pacman -Qqn > $DIR/regpkg.txt
+elif [ "$1" = "aurpkg" ]; then
+  pacman -Qqm > $DIR/aurpkg.txt
 fi

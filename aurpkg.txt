@@ -1,0 +1,3 @@
+adapta-gtk-theme
+dropbox-cli
+spideroak-one
